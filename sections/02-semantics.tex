@@ -1,0 +1,42 @@
+\section{结构、解释与满足}\label{sec:semantics}
+
+语法规定符号如何形成项与公式，结构则给这些符号赋予意义。
+
+\begin{definition}[一阶结构]
+设 $L$ 是一阶语言。一个 $L$-结构写作
+\[
+M=\bigl(\Omega,(f_i^{k,M}),(P_i^{k,M}),(c_i^M)\bigr),
+\]
+其中 $\Omega\neq\varnothing$ 是论域；$f_i^{k,M}:\Omega^k\to\Omega$ 是函数符号的解释；$P_i^{k,M}\subseteq\Omega^k$ 是谓词符号的解释；$c_i^M\in\Omega$ 是常元的解释。
+\end{definition}
+
+含变量的项需要赋值 $s:\mathrm{Var}\to\Omega$。递归地，
+\[
+\sem{x}_{M,s}=s(x),\qquad \sem{c_i}_{M,s}=c_i^M,
+\]
+\[
+\sem{f(t_1,\ldots,t_k)}_{M,s}=f^M(\sem{t_1}_{M,s},\ldots,\sem{t_k}_{M,s}).
+\]
+
+原子公式的满足关系为
+\[
+M,s\models P(t_1,\ldots,t_k)
+\Longleftrightarrow
+(\sem{t_1}_{M,s},\ldots,\sem{t_k}_{M,s})\in P^M,
+\]
+且
+\[
+M,s\models t=u\Longleftrightarrow \sem t_{M,s}=\sem u_{M,s}.
+\]
+
+若 $s[x\mapsto a]$ 表示只把 $x$ 的值改成 $a$ 的赋值，则
+\[
+M,s\models\forall x\,\varphi\Longleftrightarrow
+\text{对所有 }a\in\Omega,\ M,s[x\mapsto a]\models\varphi,
+\]
+\[
+M,s\models\exists x\,\varphi\Longleftrightarrow
+\text{存在 }a\in\Omega,\ M,s[x\mapsto a]\models\varphi.
+\]
+
+当 $\varphi$ 是句子时，赋值不再影响真值，写作 $M\models\varphi$。若 $\Gamma$ 是句子集合，则 $M\models\Gamma$ 表示 $M$ 满足其中每个句子。

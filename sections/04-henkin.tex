@@ -1,0 +1,33 @@
+\section{Peano 结构、理论与 Henkin 方法}\label{sec:henkin}
+
+在含有 $0$、后继 $S$ 与加法 $+$ 的语言中，Peano 结构满足
+\[
+\forall x\,\neg(S(x)=0),
+\qquad
+\forall x\forall y\,(S(x)=S(y)\to x=y),
+\]
+\[
+\forall x\,(x+0=x),
+\qquad
+\forall x\forall y\,(x+S(y)=S(x+y)).
+\]
+归纳法是一族公理模式：对每个公式 $\varphi$，加入
+\[
+\bigl(\varphi(0)\land\forall x(\varphi(x)\to\varphi(S(x)))\bigr)\to\forall x\,\varphi(x).
+\]
+
+设 $A$ 是公理集。本课程中的 theory 是 $A$ 推出的所有句子：
+\[
+\operatorname{Cn}(A)=\{\varphi:\varphi\text{ 是句子且 }A\vdash\varphi\}.
+\]
+若 $A$ 中有存在句子 $\exists x\,\varphi(x)$，Henkin 方法在语言中加入新常元 $c_\varphi$，并加入见证公理
+\[
+\exists x\,\varphi(x)\to\varphi(c_\varphi).
+\]
+这里 $c_\varphi$ 是符号，而 $c_\varphi^M$ 是其在模型中所指的对象。
+
+\begin{definition}[极大一致集]
+句子集合 $T$ 一致且不能再严格扩充而保持一致时，称为极大一致集。经典逻辑中，对每个句子 $\sigma$，通常恰有一个属于 $T$ 的 $\sigma$ 或 $\neg\sigma$。
+\end{definition}
+
+Henkin 构造的逻辑链条是：扩充语言并加入见证公理，逐步保持一致地加入句子或其否定，得到极大一致集，再由闭项的等价类构造模型。

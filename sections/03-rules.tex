@@ -1,0 +1,34 @@
+\section{量词与等号规则}\label{sec:rules}
+
+自然演绎的量词规则如下：
+\[
+\frac{\forall x\,\varphi}{\varphi[t/x]}\ (\forall E),\qquad
+\frac{\varphi[a/x]}{\forall x\,\varphi}\ (\forall I),
+\]
+\[
+\frac{\varphi[t/x]}{\exists x\,\varphi}\ (\exists I),\qquad
+\frac{\exists x\,\varphi\quad [\varphi[a/x]]\vdots\psi}{\psi}\ (\exists E).
+\]
+
+在 $\forall E$ 中必须避免变量捕获；$\forall I$ 中的 $a$ 必须是任意参数，不能出现在未解除的假设中；$\exists E$ 中的 $a$ 是新鲜的临时见证，不能出现在最终结论或未解除的其他假设中。
+
+\begin{example}
+\[
+\exists x\,\forall y\,P(x,y)\vdash\forall y\,\exists x\,P(x,y).
+\]
+取存在断言的见证 $a$，任取 $b$，则由 $\forall E$ 得 $P(a,b)$，再由 $\exists I$ 得 $\exists xP(x,b)$，最后由 $\forall I$ 得 $\forall y\exists xP(x,y)$。反向一般不成立：取 $P(x,y)$ 为 $x=y$ 且论域至少有两个元素即可。
+\end{example}
+
+等号满足自反性、对称性、传递性与代入性：
+\[
+\forall x\,(x=x),
+\quad \forall x\forall y\,(x=y\to y=x),
+\]
+\[
+\forall x\forall y\forall z\,((x=y\land y=z)\to x=z).
+\]
+代入性可写作
+\[
+t=u\to(\varphi[t/x]\to\varphi[u/x]),
+\]
+或在自然演绎中作为等号消去规则。

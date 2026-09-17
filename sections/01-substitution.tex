@@ -1,0 +1,22 @@
+\section{代入、自由变量与句子}\label{sec:subst}
+
+公式中的变量出现可能是自由的，也可能受到量词约束。没有自由变量的公式称为\keyword{句子}（sentence），也称为闭公式；没有变量的项称为闭项。
+
+\begin{definition}[可自由代入]
+设 $\varphi$ 为公式，$x$ 为变量，$t$ 为项。将 $t$ 代入 $x$ 的自由出现记为 $\varphi[t/x]$。称 $t$ 在 $\varphi$ 中可自由代入 $x$，若代入后 $t$ 中的自由变量不会落入 $\varphi$ 中量词的作用域而被捕获。
+\end{definition}
+
+替换不是简单的字符替换。例如
+\[
+\varphi(x)=\exists y\,(x\neq y)
+\]
+中，若直接代入 $y$，得到 $\exists y\,(y\neq y)$；代入的 $y$ 被原有的 $\exists y$ 捕获。先改名可避免此问题：
+\[
+\exists y\,(x\neq y)\equiv\exists z\,(x\neq z)
+\quad\Longrightarrow\quad
+\exists z\,(y\neq z).
+\]
+
+\begin{remark}
+“$x$ 自由出现”是公式的性质；“$t$ 可自由代入 $x$”是一次替换的合法性条件。二者不可混同。
+\end{remark}

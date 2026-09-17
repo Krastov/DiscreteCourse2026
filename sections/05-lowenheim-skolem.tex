@@ -1,0 +1,19 @@
+\section{紧致性与模型大小}\label{sec:ls}
+
+\begin{theorem}[紧致性]
+若句子集合 $\Gamma$ 的每个有限子集都有模型，则 $\Gamma$ 有模型。
+\end{theorem}
+
+\begin{proof}
+若 $\Gamma$ 无模型，由完备性可推出矛盾；但有限形式证明只使用有限多个前提，从而某个有限子集已无模型，矛盾。
+\end{proof}
+
+\begin{theorem}[不可数的 Peano 模型]
+存在不可数模型满足 Peano 公理。
+\end{theorem}
+
+\begin{proof}
+取 $|I|>|\mathbb N|$，对每个 $i\in I$ 加入常元 $c_i$，并加入 $c_i\neq c_j$（$i\neq j$）。任意有限子集只涉及有限多个常元，可在标准自然数结构中解释为互不相同的自然数，故由紧致性整个扩充理论有模型 $M$。映射 $i\mapsto c_i^M$ 是从 $I$ 到 $M$ 的单射，因此 $|M|\ge |I|$，模型不可数。
+\end{proof}
+
+这说明一阶 Peano 公理不能唯一决定模型的大小，也不能排除非标准元素。模型的论域大小是语义性质，而不是由有限条一阶公理自动固定的外部基数。
