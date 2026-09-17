@@ -1,0 +1,21 @@
+\documentclass[cjk]{loom}
+\usepackage{bussproofs}
+\newcommand{\sem}[1]{[\![\,#1\,]\!]}
+\newcommand{\M}{\mathcal M}
+\newcommand{\PA}{\mathsf{PA}}
+\newcommand{\Free}{\mathrm{Free}}
+\runningthread{离散数学与结构 · 一阶逻辑与模型}
+\begin{document}
+\loomcover{一阶逻辑、Peano 算术与模型构造}{个人整理笔记}{Krastov}{2026 年 9 月}
+\begin{strand}
+本笔记将代入、自由变量、一阶语义、量词与等号规则、Peano 结构、理论、Henkin 见证常元、极大一致集，以及由紧致性得到的模型大小结论串成一条主线。符号若与课堂讲义不同，以课堂规则为准。
+\end{strand}
+\clearpage
+\tableofcontents
+\clearpage
+\input{sections/01-substitution}
+\input{sections/02-semantics}
+\input{sections/03-rules}
+\input{sections/04-henkin}
+\input{sections/05-lowenheim-skolem}
+\end{document}
